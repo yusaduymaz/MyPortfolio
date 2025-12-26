@@ -1,0 +1,158 @@
+﻿@{
+    var currentController = ViewContext.RouteData.Values["controller"].ToString();
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYD Admin Panel - Portfolio Yönetimi</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Icons (Font Awesome) -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Main Admin Styles -->
+    <link rel="stylesheet" href="/AdminMYD/assets/css/admin.css">
+</head>
+<style>
+    a {
+        text-decoration: none;
+        color: #a2c4f8;
+    }
+
+        a:hover, a:focus {
+            color: #61c554;
+        }
+
+    }
+
+    .topbar-title h1 {
+        font-size: 36px !important;
+    }
+
+    .nav {
+        color: #ccc;
+        display: block;
+        padding: 10px 15px;
+        text-decoration: none;
+    }
+
+    .nav-link:hover,
+    .nav-item.active > .nav-link {
+        background: linear-gradient(135deg, #6366f1, #22c55e);
+        box-shadow: 0 10px 25px rgba(79, 70, 229, 0.5);
+        color: #fff;
+    }
+</style>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="admin-brand">
+                <span class="brand-logo">MYD</span>
+                <span class="brand-text">Admin Panel</span>
+            </div>
+
+            <nav class="admin-nav">
+                <a href="/Feature/Index" class="nav-link @(currentController == "Feature" ? "active" : "")">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Home Page</span>
+                </a>
+                <a href="/About/Index" class="nav-link @(currentController == "About" ? "active" : "")">
+                    <i class="fa-solid fa-user"></i>
+                    <span>About Me</span>
+                </a>
+                <a href="/Skill/Index" class="nav-link @(currentController == "Skill" ? "active" : "")">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>Expertise</span>
+                </a>
+                <a href="/Certificate/Index" class="nav-link @(currentController == "Certificate" ? "active" : "")">
+                    <i class="fa-solid fa-certificate"></i>
+                    <span>Certificates</span>
+                </a>
+                <a href="/Project/Index" class="nav-link @(currentController == "Project" ? "active" : "")">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <span>Projects</span>
+                </a>
+                <a href="/Message/Index" class="nav-link @(currentController == "Message" ? "active" : "")">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+                <a href="/SocialMedia/Index" class="nav-link @(currentController == "SocialMedia" ? "active" : "")">
+                    <i class="fa-solid fa-share-nodes"></i>
+                    <span>Social Media</span>
+                </a>
+                <a href="/Information/Index" class="nav-link @(currentController == "Information" ? "active" : "")">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span>Informations</span>
+                </a>
+
+                <a href="/Admins/Index" class="nav-link @(currentController == "Admins" ? "active" : "")">
+                    <i class="fa fa-users-cog"></i>
+                    <span>Admins</span>
+                </a>
+
+            </nav>
+
+            <div class="admin-sidebar-footer">
+                <a href="/Default/Index" class="sidebar-logout" target="_blank">
+                    <i class="fa-solid fa-globe"></i>
+                    <span>Visit Website</span>
+                </a>
+                <br>
+                <a href="/Login/LogOut" class="sidebar-logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Exit</span>
+                </a>
+
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="admin-main">
+            <!-- Topbar -->
+            <header class="admin-topbar">
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="topbar-title">
+                    <h1 id="pageTitle">Admin Panel</h1>
+                    <p class="topbar-subtitle">Portfolyo yönetim paneli</p>
+                </div>
+
+                <div class="topbar-right">
+                    <button class="topbar-icon-btn">
+                        <i class="fa-regular fa-bell"></i>
+                    </button>
+                    <div class="topbar-user">
+                        <div class="user-avatar">A</div>
+                        <div class="user-info">
+                            <span class="user-name">Admin</span>
+                            <span class="user-role">Yönetici</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Pages Wrapper -->
+            <main class="admin-content">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+    <!-- Admin Script -->
+    <script src="/AdminMYD/assets/js/admin.js"></script>
+</body>
+
+</html>

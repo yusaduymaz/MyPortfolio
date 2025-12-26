@@ -1,0 +1,42 @@
+﻿@using MyPortfolio.Models.Entity
+@model List<TblProjects>
+
+<section class="projects section" id="projects" aria-labelledby="projects-title">
+    <h2 class="section-title" id="projects-title">Projeler</h2>
+    <div class="projects__container bd-grid">
+
+        <!-- Project Card 1 -->
+        @foreach (var x in Model)
+        {
+            <article class="project-card glass-card">
+
+                <div class="project-card__thumbnail">
+                    <img src="@x.ImageUrl" alt="E-Ticaret Platformu ekran görüntüsü" loading="lazy">
+                    <div class="project-card__overlay">
+                        <div class="ribbon ribbon--project"><span>@x.Situation </span></div>
+                    </div>
+                </div>
+                <div class="project-card__content">
+                    <h3 class="project-card__title">@x.Title</h3>
+                    <p class="project-card__description">
+                        @x.Description
+                    </p>
+
+                </div>
+                <div class="project-card__actions">
+                    <a href="@x.DemoUrl" class="project-card__button project-card__button--demo" target="_blank"
+                       rel="noopener noreferrer" aria-label="Canlı demo görüntüle">
+                        <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                        <span>Canlı Demo</span>
+                    </a>
+                    <a href="@x.GithubUrl" class="project-card__button project-card__button--github" target="_blank"
+                       rel="noopener noreferrer" aria-label="GitHub kodunu görüntüle">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+                
+            </article>
+        }
+        </div>
+</section>

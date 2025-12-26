@@ -1,0 +1,38 @@
+﻿@model MyPortfolio.Models.Entity.TblSocialMedia
+@{
+    ViewBag.Title = "Hesap Düzenle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="page-header">
+    <div>
+        <h2>Hesabı Düzenle</h2>
+    </div>
+</div>
+
+<div class="card">
+    <form method="post" class="form">
+        @Html.HiddenFor(x => x.SocialMediaID)
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="Name" value="@Model.Name" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label>Url</label>
+            <input type="text" name="Url" value="@Model.Url" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label>Icon (FontAwesome)</label>
+            <input type="text" name="Icon" value="@Model.Icon" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>
+                @Html.CheckBoxFor(x => x.IsActive) Aktif mi?
+            </label>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Güncelle</button>
+            <a href="/SocialMedia/Index" class="btn btn-outline">Vazgeç</a>
+        </div>
+    </form>
+</div>

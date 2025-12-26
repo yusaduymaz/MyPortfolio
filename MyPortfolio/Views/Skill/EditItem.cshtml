@@ -1,0 +1,34 @@
+﻿@model MyPortfolio.Models.Entity.TblExpertiseItems
+@{
+    ViewBag.Title = "Madde Düzenle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="page-header">
+    <div>
+        <h2>Maddeyi Düzenle</h2>
+    </div>
+</div>
+
+<div class="card">
+    <form method="post" class="form">
+        @Html.HiddenFor(x => x.Id)
+        @Html.HiddenFor(x => x.ExpertiseCardId)
+        <div class="form-group">
+            <label>Icon Class (FontAwesome)</label>
+            <input type="text" name="IconClass" value="@Model.IconClass" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" name="Title" value="@Model.Title" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea name="Description" rows="4" class="form-control">@Model.Description</textarea>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Güncelle</button>
+            <a href="/Skill/Items/@Model.ExpertiseCardId" class="btn btn-outline">Vazgeç</a>
+        </div>
+    </form>
+</div>

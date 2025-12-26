@@ -1,0 +1,21 @@
+﻿@using MyPortfolio.Models.Entity
+@model List<TblExpertiseCards>
+
+@foreach (var x in Model)
+{
+    <article class="expertise-card expertise-card--fullstack glass-card">
+        <div class="expertise-card__header">
+
+            <div class="expertise-card__title-wrapper">
+
+                <h3 class="expertise-card__title">@x.Title</h3>
+                <p class="expertise-card__subtitle">@x.Subtitle</p>
+                <span class="expertise-card__tag">@x.Tag</span>
+
+            </div>
+            
+        </div>
+
+        @Html.Action("ExpertiseItems", new { cardId = x.Id })
+    </article>
+}

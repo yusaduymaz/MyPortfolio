@@ -1,0 +1,12 @@
+﻿@using MyPortfolio.Models.Entity
+@model List<TblSocialMedia>
+
+<div class="home__social" role="list" aria-label="Sosyal medya linkleri">
+    @foreach (var x in Model)
+    {
+        <a href="@x.Url" target="_blank" rel="noopener noreferrer"
+           class="home__social-icon" aria-label="LinkedIn profilim" role="listitem">
+            <i class="@x.Icon" aria-hidden="true"></i>
+        </a>
+    }
+    </div>  

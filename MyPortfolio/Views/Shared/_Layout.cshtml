@@ -1,0 +1,317 @@
+﻿@using MyPortfolio.Models.Entity
+@model List<TblFirst>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+          content="Muhammed Yuşa Duymaz - Python, SQL ve Web Geliştirme alanında yetkin bir Senior Frontend Developer ve UI/UX Designer portföyü. Modern web çözümleri ve kullanıcı deneyimi odaklı projeler.">
+    <meta name="author" content="Muhammed Yuşa Duymaz">
+    <meta name="keywords"
+          content="Frontend Developer, UI/UX Designer, Yazılım Geliştirici, Python, SQL, Web Geliştirme, React, JavaScript, Portfolio">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Muhammed Yuşa Duymaz - Senior Frontend Developer & UI/UX Designer">
+    <meta property="og:description"
+          content="Modern web çözümleri ve kullanıcı deneyimi odaklı projeler geliştiren Senior Frontend Developer ve UI/UX Designer portföyü.">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Muhammed Yuşa Duymaz - Senior Frontend Developer & UI/UX Designer">
+    <meta name="twitter:description"
+          content="Modern web çözümleri ve kullanıcı deneyimi odaklı projeler geliştiren Senior Frontend Developer ve UI/UX Designer portföyü.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/MyPortfolio/assets/img/favicon.ico">
+
+    <!-- Google Fonts - Modern Font Pairing -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="/MyPortfolio/assets/css/styles.css">
+    @foreach (var x in Model)
+    {
+        <title>@x.WebsiteTitle</title>
+    }
+
+</head>
+
+<body>
+    <!--===== HEADER =====-->
+    <header class="l-header" role="banner">
+        <nav class="nav bd-grid" role="navigation" aria-label="Ana navigasyon">
+            @foreach (var x in Model)
+            {
+                <div>
+                    <a href="#home" class="nav__logo" aria-label="Ana sayfa">@x.NavTitle</a>
+                </div>
+            }
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list" role="menubar">
+                    <li class="nav__item" role="none">
+                        <a href="#home" class="nav__link active-link" role="menuitem">
+                            Home Page
+                        </a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="#about" class="nav__link" role="menuitem">About Me</a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="#expertise" class="nav__link"
+                           role="menuitem">Expertise</a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="#work" class="nav__link" role="menuitem">Certificates</a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="#projects" class="nav__link" role="menuitem">Projects</a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="#contact" class="nav__link" role="menuitem">Contact</a>
+                    </li>
+                    <li class="nav__item" role="none">
+                        <a href="loginpanel/login.html" class="nav__link nav__link--btn"
+                           role="menuitem">Login</a>
+                    </li>
+                </ul>
+            </div>
+
+            <button class="nav__toggle" id="nav-toggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="nav__overlay" id="nav-overlay" aria-hidden="true"></div>
+
+    <main class="l-main">
+        <!--===== HOME =====-->
+        <section class="home bd-grid" id="home" aria-labelledby="home-title">
+            @foreach (var x in Model)
+            {
+                <div class="home__data">
+                    <p class="home__greeting" aria-label="Karşılama metni">Merhaba, Ben</p>
+                    <h1 class="home__title" id="home-title">
+                        <span class="home__title-color">@x.Title</span><br>
+                        <span class="home__title-subtitle">@x.Subtitle</span><br>
+                        <span class="home__title-subtitle">@x.Subtitle2</span>
+                    </h1>
+                    <p class="home__description">
+                        @x.Description
+                    </p>
+
+                    <div class="home__buttons">
+                        <a href="#contact" class="button button--primary" aria-label="İletişime geç">Contact Me</a>
+                        <a href="#projects" class="button button--secondary"
+                           aria-label="Projelerimi görüntüle">My Projects</a>
+                        <a href="#projects" class="button button--secondary"
+                           aria-label="Projelerimi görüntüle">My Cv</a>
+                    </div>
+                </div>
+
+                <div class="home__social" role="list" aria-label="Sosyal medya linkleri">
+                    <a href="https://linkedin.com/in/yusaduymazz" target="_blank" rel="noopener noreferrer"
+                       class="home__social-icon" aria-label="LinkedIn profilim" role="listitem">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://github.com/yusaduymaz" target="_blank" rel="noopener noreferrer"
+                       class="home__social-icon" aria-label="GitHub profilim" role="listitem">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://twitter.com/myusaduymaz" target="_blank" rel="noopener noreferrer"
+                       class="home__social-icon" aria-label="Twitter profilim" role="listitem">
+                        <i class="fab fa-x-twitter" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="home__img">
+                    <div class="home__blob-container">
+                        <div class="home__blob-bg"></div>
+                        <img class="home__blob-img" src="/MyPortfolio/assets/img/about_image.png" alt="Muhammed Yuşa Duymaz" />
+                    </div>
+                </div>
+            }
+        </section>
+
+        <!--===== ABOUT =====-->
+        <section class="about section" id="about" aria-labelledby="about-title">
+            <h2 class="section-title" id="about-title">Hakkımda</h2>
+
+            <div class="about__container bd-grid">
+                <!-- Content Side (Left) -->
+                <div class="about__content">
+                    @Html.Action("About")
+
+                    <!-- Statistics Cards -->
+                    @Html.Action("AboutCards")
+
+                </div>
+
+                <!-- Image Side (Right) -->
+
+            </div>
+
+
+        </section>
+
+        <!--===== EXPERTISE SECTION =====-->
+        <section class="expertise section" id="expertise" aria-labelledby="expertise-title">
+            <h2 class="section-title" id="expertise-title">Uzmanlık Alanlarım</h2>
+
+            <div class="expertise__container bd-grid">
+                @Html.Action("Expertise")
+            </div>
+        </section>
+
+        <!--===== CERTIFICATES SECTION =====-->
+        @Html.Action("Certificates")
+
+        <!--===== PROJECTS SECTION =====-->
+        @Html.Action("Projects")
+
+        <!--===== CONTACT FORM SECTION =====-->
+        <section class="contact section" id="contact" aria-labelledby="contact-title">
+            <div class="bd-grid">
+                <h2 class="section-title" id="contact-title">İletişime Geçin</h2>
+                <p class="contact__subtitle">
+                    Projeleriniz için birlikte çalışalım. Aşağıdaki formu doldurarak bana
+                    ulaşabilirsiniz.
+                </p>
+
+                <div class="contact__container">
+                    <!-- Contact Info Cards (Glassmorphism) -->
+                    <div class="contact__info">
+                        <div class="contact__card glass-card">
+                            <div class="contact__card-icon">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="contact__card-title">E-posta</h3>
+                            <p class="contact__card-info">yusaduymazz@gmail.com</p>
+                            <a href="mailto:info@businessname.com" class="contact__card-link">
+                                Mesaj Gönder <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+
+                        <div class="contact__card glass-card">
+                            <div class="contact__card-icon">
+                                <i class="fas fa-phone" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="contact__card-title">Telefon</h3>
+                            <p class="contact__card-info">+90 555 555 55 55</p>
+                            <a href="tel:+905555555555" class="contact__card-link">
+                                Ara <i class="fas fa-arrow-right"
+                                       aria-hidden="true"></i>
+                            </a>
+                        </div>
+
+                        <div class="contact__card glass-card">
+                            <div class="contact__card-icon">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="contact__card-title">Konum</h3>
+                            <p class="contact__card-info">İstanbul, Türkiye</p>
+                            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer"
+                               class="contact__card-link">
+                                Haritada Gör <i class="fas fa-arrow-right"
+                                                aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form (Glassmorphism) -->
+                    <form class="contact__form glass-card" id="contact-form" novalidate aria-label="İletişim formu">
+                        <div class="contact__form-group">
+                            <label for="name" class="contact__form-label">
+                                Adınız Soyadınız <span class="required">*</span>
+                            </label>
+                            <div class="contact__form-input-wrapper">
+                                <i class="fas fa-user contact__form-icon" aria-hidden="true"></i>
+                                <input type="text" id="name" name="name" class="contact__form-input"
+                                       placeholder="Adınız ve soyadınız" required aria-required="true"
+                                       aria-describedby="name-error">
+                            </div>
+                            <span class="contact__form-error" id="name-error" role="alert" aria-live="polite"></span>
+                        </div>
+
+                        <div class="contact__form-group">
+                            <label for="email" class="contact__form-label">
+                                E-posta Adresiniz <span class="required">*</span>
+                            </label>
+                            <div class="contact__form-input-wrapper">
+                                <i class="fas fa-envelope contact__form-icon" aria-hidden="true"></i>
+                                <input type="email" id="email" name="email" class="contact__form-input"
+                                       placeholder="ornek@email.com" required aria-required="true"
+                                       aria-describedby="email-error">
+                            </div>
+                            <span class="contact__form-error" id="email-error" role="alert" aria-live="polite"></span>
+                        </div>
+
+                        <div class="contact__form-group">
+                            <label for="subject" class="contact__form-label">
+                                Konu <span class="required">*</span>
+                            </label>
+                            <div class="contact__form-input-wrapper">
+                                <i class="fas fa-tag contact__form-icon" aria-hidden="true"></i>
+                                <input type="text" id="subject" name="subject" class="contact__form-input"
+                                       placeholder="Mesajınızın konusu" required aria-required="true"
+                                       aria-describedby="subject-error">
+                            </div>
+                            <span class="contact__form-error" id="subject-error" role="alert" aria-live="polite"></span>
+                        </div>
+
+                        <div class="contact__form-group contact__form-group--full">
+                            <label for="message" class="contact__form-label">
+                                Mesajınız <span class="required">*</span>
+                            </label>
+                            <div class="contact__form-input-wrapper">
+                                <i class="fas fa-comment-alt contact__form-icon contact__form-icon--textarea"
+                                   aria-hidden="true"></i>
+                                <textarea id="message" name="message" class="contact__form-input contact__form-textarea"
+                                          rows="6" placeholder="Mesajınızı buraya yazın..." required aria-required="true"
+                                          aria-describedby="message-error"></textarea>
+                            </div>
+                            <span class="contact__form-error" id="message-error" role="alert" aria-live="polite"></span>
+                        </div>
+
+                        <button type="submit" class="button button--primary button--submit" aria-label="Formu gönder">
+                            <span class="button__text">Mesajı Gönder</span>
+                            <i class="fas fa-paper-plane button__icon" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="contact__form-message" id="form-message" role="alert" aria-live="polite"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!--===== SCROLL REVEAL =====-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--===== MAIN JS =====-->
+    <script src="/MyPortfolio/assets/js/main.js"></script>
+</body>
+
+</html>

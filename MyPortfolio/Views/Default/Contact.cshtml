@@ -1,0 +1,58 @@
+﻿@using MyPortfolio.Models.Entity
+@model TblMessages
+
+@using (Html.BeginForm("Contact", "Default", FormMethod.Post, new { @class = "contact__form glass-card", id = "contact-form", novalidate = "novalidate", aria_label = "İletişim formu" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="contact__form-group">
+        <label for="FullName" class="contact__form-label">
+            Adınız Soyadınız <span class="required">*</span>
+        </label>
+        <div class="contact__form-input-wrapper">
+            <i class="fas fa-user contact__form-icon" aria-hidden="true"></i>
+            @Html.TextBoxFor(m => m.FullName, new { @class = "contact__form-input", placeholder = "Adınız ve soyadınız", required = "required", aria_required = "true", aria_describedby = "name-error" })
+        </div>
+        @Html.ValidationMessageFor(m => m.FullName, null, new { @class = "contact__form-error", id = "name-error", role = "alert", aria_live = "polite" })
+    </div>
+
+    <div class="contact__form-group">
+        <label for="Email" class="contact__form-label">
+            E-posta Adresiniz <span class="required">*</span>
+        </label>
+        <div class="contact__form-input-wrapper">
+            <i class="fas fa-envelope contact__form-icon" aria-hidden="true"></i>
+            @Html.TextBoxFor(m => m.Email, new { @type = "email", @class = "contact__form-input", placeholder = "ornek@email.com", required = "required", aria_required = "true", aria_describedby = "email-error" })
+        </div>
+        @Html.ValidationMessageFor(m => m.Email, null, new { @class = "contact__form-error", id = "email-error", role = "alert", aria_live = "polite" })
+    </div>
+
+    <div class="contact__form-group">
+        <label for="Subject" class="contact__form-label">
+            Konu <span class="required">*</span>
+        </label>
+        <div class="contact__form-input-wrapper">
+            <i class="fas fa-tag contact__form-icon" aria-hidden="true"></i>
+            @Html.TextBoxFor(m => m.Subject, new { @class = "contact__form-input", placeholder = "Mesajınızın konusu", required = "required", aria_required = "true", aria_describedby = "subject-error" })
+        </div>
+        @Html.ValidationMessageFor(m => m.Subject, null, new { @class = "contact__form-error", id = "subject-error", role = "alert", aria_live = "polite" })
+    </div>
+
+    <div class="contact__form-group contact__form-group--full">
+        <label for="Content" class="contact__form-label">
+            Mesajınız <span class="required">*</span>
+        </label>
+        <div class="contact__form-input-wrapper">
+            <i class="fas fa-comment-alt contact__form-icon contact__form-icon--textarea" aria-hidden="true"></i>
+            @Html.TextAreaFor(m => m.Content, new { @class = "contact__form-input contact__form-textarea", rows = 6, placeholder = "Mesajınızı buraya yazın...", required = "required", aria_required = "true", aria_describedby = "message-error" })
+        </div>
+        @Html.ValidationMessageFor(m => m.Content, null, new { @class = "contact__form-error", id = "message-error", role = "alert", aria_live = "polite" })
+    </div>
+
+    <button type="submit" class="button button--primary button--submit" aria-label="Formu gönder">
+        <span class="button__text">Mesajı Gönder</span>
+        <i class="fas fa-paper-plane button__icon" aria-hidden="true"></i>
+    </button>
+
+    <div class="contact__form-message" id="form-message" role="alert" aria-live="polite"></div>
+}

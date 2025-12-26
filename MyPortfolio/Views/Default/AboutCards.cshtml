@@ -1,0 +1,21 @@
+﻿@using MyPortfolio.Models.Entity
+@model List<TblAboutsCards>
+
+
+<div class="about__stats">
+    @foreach (var x in Model)
+    {
+        <div class="stat-card glass-card">
+
+            <div class="stat-card__icon">
+                <i class="@x.CardIcon" aria-hidden="true"></i>
+            </div>
+            <div class="stat-card__content">
+                <span class="stat-card__number">@x.CardBaslik</span>
+                <span class="stat-card__label">@x.CardAltBaslik</span>
+                <span class="stat-card__sublabel">@x.CardAltBaslik2</span>
+            </div>
+            
+        </div>
+    }
+    </div>

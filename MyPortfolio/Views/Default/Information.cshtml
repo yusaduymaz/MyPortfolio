@@ -1,0 +1,18 @@
+﻿@using MyPortfolio.Models.Entity
+@model List<TblInformation>
+
+<div class="contact__info">
+    @foreach (var x in Model)
+    {
+    <div class="contact__card glass-card">
+        <div class="contact__card-icon">
+            <i class="@x.Icon" aria-hidden="true"></i>
+        </div>
+        <h3 class="contact__card-title">@x.Title</h3>
+        <p class="contact__card-info">@x.Subtitle</p>
+        <a href="mailto:info@businessname.com" class="contact__card-link">
+            @x.Button<i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+    </div>
+    }
+</div>

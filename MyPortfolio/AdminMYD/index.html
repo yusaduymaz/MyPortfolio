@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYD Admin Panel - Portfolio Yönetimi</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons (Font Awesome) -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Main Admin Styles -->
+    <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="admin-brand">
+                <span class="brand-logo">MYD</span>
+                <span class="brand-text">Admin Panel</span>
+            </div>
+
+            <nav class="admin-nav">
+                <button class="nav-link active" data-page="home">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Home Page</span>
+                </button>
+                <button class="nav-link" data-page="about">
+                    <i class="fa-solid fa-user"></i>
+                    <span>About Me</span>
+                </button>
+                <button class="nav-link" data-page="expertise">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>Expertise</span>
+                </button>
+                <button class="nav-link" data-page="certificates">
+                    <i class="fa-solid fa-certificate"></i>
+                    <span>Certificates</span>
+                </button>
+                <button class="nav-link" data-page="projects">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <span>Projects</span>
+                </button>
+                <button class="nav-link" data-page="contact">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Contact</span>
+                </button>
+                <button class="nav-link" data-page="admin-management">
+                    <i class="fa-solid fa-sliders"></i>
+                    <span>Admin Management</span>
+                </button>
+            </nav>
+
+            <div class="admin-sidebar-footer">
+                <button class="sidebar-logout" id="btnExit">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Visit Website</span>
+                </button>
+                <br>
+                <button class="sidebar-logout" id="btnExit">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Exit</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="admin-main">
+            <!-- Topbar -->
+            <header class="admin-topbar">
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="topbar-title">
+                    <h1 id="pageTitle">Home Page</h1>
+                    <p class="topbar-subtitle">Portfolyo yönetim paneli</p>
+                </div>
+
+                <div class="topbar-right">
+                    <button class="topbar-icon-btn">
+                        <i class="fa-regular fa-bell"></i>
+                    </button>
+                    <div class="topbar-user">
+                        <div class="user-avatar">M</div>
+                        <div class="user-info">
+                            <span class="user-name">Muhammed Yuşa Duymaz</span>
+                            <span class="user-role">Admin</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Pages Wrapper -->
+            <main class="admin-content">
+
+                <!-- HOME PAGE -->
+                <section class="page active" id="page-home">
+                    <div class="page-header">
+                        <div>
+                            <h2>Home Page</h2>
+                            <p>TblFirst tablosundaki ana sayfa (hero) içeriklerini buradan düzenle.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-2">
+                        <!-- SOL: TblFirst ana alanlar -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Hero İçeriği (TblFirst)</h2>
+                            </div>
+
+                            <form class="form" id="homeFirstForm" method="post">
+                                <div class="form-group">
+                                    <label for="firstId">Id</label>
+                                    <input type="text" id="firstId" name="Id" readonly placeholder="(otomatik)">
+                                    <!-- Tek kayıt kullanıyorsan bu alanı sadece görüntü amaçlı bırak -->
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="websiteTitle">WebsiteTitle</label>
+                                    <input type="text" id="websiteTitle" name="WebsiteTitle"
+                                           placeholder="Tarayıcı sekmesi / site başlığı">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="navTitle">NavTitle</label>
+                                    <input type="text" id="navTitle" name="NavTitle"
+                                           placeholder="Navbar'da görünen ad (ör: MYD Portfolio)">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="firstTitle">Title</label>
+                                    <input type="text" id="firstTitle" name="Title"
+                                           placeholder="Örn: Senior Frontend Developer" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="firstSubtitle">Subtitle</label>
+                                    <input type="text" id="firstSubtitle" name="Subtitle"
+                                           placeholder="Örn: Modern Web Arayüzleri Tasarlıyorum">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="firstSubtitle2">Subtitle2</label>
+                                    <input type="text" id="firstSubtitle2" name="Subtitle2"
+                                           placeholder="İkinci satır alt başlık (opsiyonel)">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="firstDescription">Description</label>
+                                    <textarea id="firstDescription" name="Description" rows="4"
+                                              placeholder="Kendini, uzmanlığını ve odaklandığın teknolojileri kısaca anlat."></textarea>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="reset" class="btn btn-outline">Temizle</button>
+                                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- SAĞ: Görsel ve link ayarları -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Görsel & Linkler</h2>
+                            </div>
+
+                            <form class="form" id="homeMediaForm" method="post">
+                                <div class="form-group">
+                                    <label for="firstImageUrl">ImageUrl</label>
+                                    <input type="text" id="firstImageUrl" name="ImageUrl"
+                                           placeholder="Profil / hero görseli için URL (https://...)">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="firstCvUrl">CvUrl</label>
+                                    <input type="text" id="firstCvUrl" name="CvUrl"
+                                           placeholder="CV indirme linki (https://...)">
+                                </div>
+
+                                <p style="font-size:.8rem; color:var(--text-soft);">
+                                    Not: Bu sayfada yeni kayıt ekleme yok, sadece mevcut <strong>TblFirst</strong> kaydını
+                                    güncelliyorsun. EF tarafında genelde tek satır kullanılır.
+                                </p>
+
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ABOUT ME PAGE -->
+                <section class="page" id="page-about">
+                    <div class="page-header">
+                        <div>
+                            <h2>About Me</h2>
+                            <p>
+                                Hakkımda alanı iki tablodan oluşuyor:
+                                <strong>TblAbouts</strong> (ana metin) ve
+                                <strong>TblAboutsCards</strong> (kartlar).
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-2">
+                        <!-- SOL: TblAbouts (tek kayıt varsayımıyla ana metin) -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Hakkımda (TblAbouts)</h2>
+                            </div>
+
+                            <form class="form" id="aboutMainForm" method="post">
+                                <!-- TblAbouts -->
+                                <div class="form-group">
+                                    <label for="aboutId">Id</label>
+                                    <input type="text" id="aboutId" name="Id" readonly placeholder="(otomatik)">
+                                    <!--
+                                      Eğer her zaman tek kayıt kullanıyorsan:
+                                      Hidden da yapabilirsin: <input type="hidden" ... />
+                                    -->
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="aboutTitle">Title</label>
+                                    <input type="text" id="aboutTitle" name="Title"
+                                           placeholder="Örn: Senior Frontend Developer" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="aboutSubTitle">SubTitle</label>
+                                    <input type="text" id="aboutSubTitle" name="SubTitle"
+                                           placeholder="Örn: UI/UX Enthusiast, Problem Solver">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="aboutDescription">Description</label>
+                                    <textarea id="aboutDescription" name="Description" rows="4"
+                                              placeholder="Hakkında ana metin (kısa)."></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="aboutDescription2">Description2</label>
+                                    <textarea id="aboutDescription2" name="Description2" rows="4"
+                                              placeholder="Hakkında ek metin (daha detaylı)."></textarea>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="reset" class="btn btn-outline">Temizle</button>
+                                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- SAĞ: TblAboutsCards (kart listesi + kart formu) -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Hakkımda Kartları (TblAboutsCards)</h2>
+                            </div>
+
+                            <!-- Kart Listesi -->
+                            <div class="table-wrapper" style="margin-bottom:1rem;">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:60px;">Id</th>
+                                            <th>CardIcon</th>
+                                            <th>CardBaslik</th>
+                                            <th>CardAltBaslik</th>
+                                            <th>CardAltBaslik2</th>
+                                            <th style="width:130px;">İşlemler</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!--
+                                          Örnek Razor:
+                                          @foreach (var card in Model.AboutsCards) {
+                                              <tr>
+                                                  <td>@card.Id</td>
+                                                  <td>@card.CardIcon</td>
+                                                  <td>@card.CardBaslik</td>
+                                                  <td>@card.CardAltBaslik</td>
+                                                  <td>@card.CardAltBaslik2</td>
+                                                  <td>
+                                                      <button type="button" class="btn btn-sm btn-outline">Düzenle</button>
+                                                      <button type="button" class="btn btn-sm btn-outline">Sil</button>
+                                                  </td>
+                                              </tr>
+                                          }
+                                        -->
+                                        <tr>
+                                            <td>1</td>
+                                            <td>fa-solid fa-code</td>
+                                            <td>5+ Yıl Deneyim</td>
+                                            <td>Frontend & UI/UX</td>
+                                            <td>Kurumsal & Freelance projeler</td>
+                                            <td>
+                                                <button type="button" class="btn btn-sm btn-outline">Düzenle</button>
+                                                <button type="button" class="btn btn-sm btn-outline">Sil</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Kart Formu -->
+                            <form class="form" id="aboutCardForm" method="post">
+                                <h3 style="font-size:.9rem; margin-bottom:.25rem;">Kart Formu</h3>
+
+                                <div class="form-group">
+                                    <label for="aboutCardId">Id</label>
+                                    <input type="text" id="aboutCardId" name="Id" readonly placeholder="(otomatik)">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="aboutCardIcon">CardIcon</label>
+                                    <input type="text" id="aboutCardIcon" name="CardIcon"
+                                           placeholder="fa-solid fa-code vb.">
+                                    <!--
+                                      Buraya doğrudan Font Awesome class'ı gireceksin.
+                                      Örn: fa-solid fa-laptop-code
+                                    -->
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="aboutCardBaslik">CardBaslik</label>
+                                    <input type="text" id="aboutCardBaslik" name="CardBaslik"
+                                           placeholder="Örn: 20+ Tamamlanan Proje">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="aboutCardAltBaslik">CardAltBaslik</label>
+                                    <input type="text" id="aboutCardAltBaslik" name="CardAltBaslik"
+                                           placeholder="Örn: Web, Dashboard, Landing Page">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="aboutCardAltBaslik2">CardAltBaslik2</label>
+                                    <input type="text" id="aboutCardAltBaslik2" name="CardAltBaslik2"
+                                           placeholder="İkinci satır, opsiyonel.">
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="reset" class="btn btn-outline">Temizle</button>
+                                    <button type="submit" class="btn btn-primary">Kart Kaydet</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- EXPERTISE PAGE -->
+                <section class="page" id="page-expertise">
+                    <div class="page-header">
+                        <div>
+                            <h2>Expertise</h2>
+                            <p>Uzmanlık kartlarını (TblExpertiseCards) ve bunlara bağlı maddeleri (TblExpertiseItems) yönet.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-2">
+                        <!-- SOL TARAF: LISTELER -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Expertise Cards</h2>
+                                <button class="btn btn-primary btn-sm" id="btnNewExpertiseCard">
+                                    <i class="fa-solid fa-plus"></i>
+                                    Yeni Card
+                                </button>
+                            </div>
+
+                            <!-- CARDS TABLOSU -->
+                            <div class="table-wrapper" style="margin-bottom:1rem;">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:60px;">Id</th>
+                                            <th>Title</th>
+                                            <th>Subtitle</th>
+                                            <th>Tag</th>
+                                            <th style="width:120px;">İşlemler</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="expertiseCardsTableBody">
+                                        <!-- JS ile doldurulacak -->
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <hr style="border-color: rgba(148,163,184,0.3); margin: .75rem 0;" />
+
+                            <div class="card-header" style="margin-top:.25rem;">
+                                <h2>Expertise Items</h2>
+                                <button class="btn btn-primary btn-sm" id="btnNewExpertiseItem" disabled>
+                                    <i class="fa-solid fa-plus"></i>
+                                    Yeni Item
+                                </button>
+                            </div>
+                            <p style="font-size:.8rem; color:var(--text-soft); margin-bottom:.5rem;">
+                                Bir card seçtiğinde, ona bağlı maddeler burada listelenecek.
+                            </p>
+
+                            <!-- ITEMS TABLOSU -->
+                            <div class="table-wrapper">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:60px;">Id</th>
+                                            <th>IconClass</th>
+                                            <th>Title</th>
+                                            <th>Description</th>
+                                            <th style="width:120px;">İşlemler</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="expertiseItemsTableBody">
+                                        <tr>
+                                            <td colspan="5">Önce bir Expertise Card seç.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- SAĞ TARAF: FORMLAR -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Card / Item Düzenleme</h2>
+                            </div>
+
+                            <div class="form" id="expertiseFormsWrapper">
+                                <!-- CARD FORM -->
+                                <form class="form" id="expertiseCardForm">
+                                    <h3 style="font-size:.9rem; margin-bottom:.25rem;">Expertise Card</h3>
+                                    <div class="form-group">
+                                        <label for="expertiseCardId">Id</label>
+                                        <input type="text" id="expertiseCardId" readonly placeholder="(otomatik)">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="expertiseCardTitle">Title</label>
+                                        <input type="text" id="expertiseCardTitle" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="expertiseCardSubtitle">Subtitle</label>
+                                        <input type="text" id="expertiseCardSubtitle">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="expertiseCardTag">Tag</label>
+                                        <input type="text" id="expertiseCardTag" placeholder="Örn: Frontend, Backend, UI/UX">
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="button" class="btn btn-outline" id="btnClearExpertiseCard">Temizle</button>
+                                        <button type="submit" class="btn btn-primary">Kaydet</button>
+                                    </div>
+                                </form>
+
+                                <hr style="border-color: rgba(148,163,184,0.3); margin: .75rem 0;" />
+
+                                <!-- ITEM FORM -->
+                                <form class="form" id="expertiseItemForm">
+                                    <h3 style="font-size:.9rem; margin-bottom:.25rem;">Expertise Item</h3>
+                                    <p style="font-size:.8rem; color:var(--text-soft);">
+                                        Seçili Card: <span id="selectedCardInfo">Yok</span>
+                                    </p>
+
+                                    <div class="form-group">
+                                        <label for="expertiseItemId">Id</label>
+                                        <input type="text" id="expertiseItemId" readonly placeholder="(otomatik)">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="expertiseItemIconClass">IconClass</label>
+                                        <input type="text" id="expertiseItemIconClass" placeholder="fa-solid fa-code vb.">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="expertiseItemTitle">Title</label>
+                                        <input type="text" id="expertiseItemTitle" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="expertiseItemDescription">Description</label>
+                                        <textarea id="expertiseItemDescription" rows="3"></textarea>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="button" class="btn btn-outline" id="btnClearExpertiseItem">Temizle</button>
+                                        <button type="submit" class="btn btn-primary">Kaydet</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CERTIFICATES PAGE -->
+                <section class="page" id="page-certificates">
+                    <div class="page-header">
+                        <div>
+                            <h2>Certificates</h2>
+                            <p>Online eğitim ve sertifikalarını buradan yönet.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-2">
+                        <!-- SOL: LISTE -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Sertifika Listesi</h2>
+                                <button class="btn btn-primary btn-sm" type="button">
+                                    <i class="fa-solid fa-plus"></i>
+                                    Yeni Sertifika
+                                </button>
+                            </div>
+
+                            <div class="table-wrapper">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:60px;">Id</th>
+                                            <th>Title</th>
+                                            <th>Institution</th>
+                                            <th>Date</th>
+                                            <th>CertificateLink</th>
+                                            <th style="width:130px;">İşlemler</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!--
+                                          Örnek Razor:
+                                          @foreach (var cert in Model.Certificates) {
+                                              <tr>
+                                                  <td>@cert.Id</td>
+                                                  <td>@cert.Title</td>
+                                                  <td>@cert.Institution</td>
+                                                  <td>@cert.Date</td>
+                                                  <td><a href="@cert.CertificateLink" target="_blank">@cert.CertificateLink</a></td>
+                                                  <td>...</td>
+                                              </tr>
+                                          }
+                                        -->
+                                        <tr>
+                                            <td>1</td>
+                                            <td>ASP.NET Core MVC</td>
+                                            <td>Udemy</td>
+                                            <td>2024-05-10</td>
+                                            <td>
+                                                <a href="#" target="_blank">Sertifikayı Gör</a>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline" type="button">Düzenle</button>
+                                                <button class="btn btn-sm btn-outline" type="button">Sil</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- SAG: FORM -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Sertifika Formu</h2>
+                            </div>
+
+                            <form class="form" id="certificateForm" method="post">
+                                <!-- TblCertificates ile bire bir alanlar -->
+                                <div class="form-group">
+                                    <label for="certificateId">Id</label>
+                                    <input type="text" id="certificateId" name="Id" readonly placeholder="(otomatik)">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="certificateTitle">Title</label>
+                                    <input type="text" id="certificateTitle" name="Title" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="certificateInstitution">Institution</label>
+                                    <input type="text" id="certificateInstitution" name="Institution" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="certificateDate">Date</label>
+                                    <input type="text" id="certificateDate" name="Date" placeholder="YYYY-MM-DD veya istediğin format">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="certificateLink">CertificateLink</label>
+                                    <input type="text" id="certificateLink" name="CertificateLink" placeholder="https://...">
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="reset" class="btn btn-outline">Temizle</button>
+                                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- PROJECTS PAGE -->
+                <section class="page" id="page-projects">
+                    <div class="page-header">
+                        <div>
+                            <h2>Projects</h2>
+                            <p>TblProjects tablosundaki portfolyo projelerini buradan yönet.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-2">
+                        <!-- SOL: LISTE -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Proje Listesi</h2>
+                                <button class="btn btn-primary btn-sm" type="button">
+                                    <i class="fa-solid fa-plus"></i>
+                                    Yeni Proje
+                                </button>
+                            </div>
+
+                            <div class="table-toolbar">
+                                <div class="input-group">
+                                    <span class="input-icon">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </span>
+                                    <input type="text" placeholder="Projelerde ara...">
+                                </div>
+                            </div>
+
+                            <div class="table-wrapper">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:60px;">Id</th>
+                                            <th>Title</th>
+                                            <th>TechStack</th>
+                                            <th>Github</th>
+                                            <th>Demo</th>
+                                            <th>CreatedDate</th>
+                                            <th style="width:140px;">İşlemler</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!--
+                                          Örnek Razor:
+                                          @foreach (var p in Model.Projects) {
+                                              <tr>
+                                                  <td>@p.Id</td>
+                                                  <td>@p.Title</td>
+                                                  <td>@p.TechStack</td>
+                                                  <td>
+                                                      @if (!string.IsNullOrEmpty(p.GithubUrl)) {
+                                                          <a href="@p.GithubUrl" target="_blank">Github</a>
+                                                      }
+                                                  </td>
+                                                  <td>
+                                                      @if (!string.IsNullOrEmpty(p.DemoUrl)) {
+                                                          <a href="@p.DemoUrl" target="_blank">Demo</a>
+                                                      }
+                                                  </td>
+                                                  <td>@p.CreatedDate?.ToString("yyyy-MM-dd")</td>
+                                                  <td>...</td>
+                                              </tr>
+                                          }
+                                        -->
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Portfolio v3</td>
+                                            <td>ASP.NET Core, React, Tailwind</td>
+                                            <td><a href="#" target="_blank">Github</a></td>
+                                            <td><a href="#" target="_blank">Demo</a></td>
+                                            <td>2025-12-21</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline" type="button">Düzenle</button>
+                                                <button class="btn btn-sm btn-outline" type="button">Sil</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- SAG: FORM (TblProjects ile bire bir) -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Proje Formu</h2>
+                            </div>
+
+                            <form class="form" id="projectForm" method="post">
+                                <div class="form-group">
+                                    <label for="projectId">Id</label>
+                                    <input type="text" id="projectId" name="Id" readonly placeholder="(otomatik)">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="projectTitle">Title</label>
+                                    <input type="text" id="projectTitle" name="Title" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="projectDescription">Description</label>
+                                    <textarea id="projectDescription" name="Description" rows="4"></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="projectImageUrl">ImageUrl</label>
+                                    <input type="text" id="projectImageUrl" name="ImageUrl" placeholder="https://...">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="projectGithubUrl">GithubUrl</label>
+                                    <input type="text" id="projectGithubUrl" name="GithubUrl" placeholder="https://github.com/...">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="projectDemoUrl">DemoUrl</label>
+                                    <input type="text" id="projectDemoUrl" name="DemoUrl" placeholder="https://demo-site...">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="projectTechStack">TechStack</label>
+                                    <input type="text" id="projectTechStack" name="TechStack"
+                                           placeholder="React, ASP.NET Core, Tailwind CSS">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="projectCreatedDate">CreatedDate</label>
+                                    <input type="date" id="projectCreatedDate" name="CreatedDate">
+                                    <!--
+                                      Eğer string format kullanacaksan:
+                                      type="text" yapıp placeholder="YYYY-MM-DD" vb. kullanabilirsin.
+                                    -->
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="reset" class="btn btn-outline">Temizle</button>
+                                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CONTACT PAGE -->
+                <section class="page" id="page-contact">
+                    <div class="page-header">
+                        <div>
+                            <h2>Contact</h2>
+                            <p>Ana sayfadaki iletişim formundan gelen mesajlar (TblMessages) burada listelenir.</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Gelen Mesajlar</h2>
+                        </div>
+
+                        <div class="table-wrapper">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th style="width:60px;">Id</th>
+                                        <th>FullName</th>
+                                        <th>Email</th>
+                                        <th>Subject</th>
+                                        <th>Content</th>
+                                        <th>SentDate</th>
+                                        <th>IsRead</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!--
+                                      Örnek Razor:
+                                      @foreach (var m in Model.Messages) {
+                                          <tr>
+                                              <td>@m.Id</td>
+                                              <td>@m.FullName</td>
+                                              <td>@m.Email</td>
+                                              <td>@m.Subject</td>
+                                              <td>@m.Content</td>
+                                              <td>@m.SentDate?.ToString("yyyy-MM-dd HH:mm")</td>
+                                              <td>@(m.IsRead == true ? "Okundu" : "Okunmadı")</td>
+                                          </tr>
+                                      }
+                                    -->
+                                    <tr>
+                                        <td>1</td>
+                                        <td>John Doe</td>
+                                        <td>john@example.com</td>
+                                        <td>Portfolyo Hk.</td>
+                                        <td>Çalışmalarınız hakkında konuşmak isterim.</td>
+                                        <td>2025-12-25 14:32</td>
+                                        <td>Okunmadı</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ADMIN MANAGEMENT PAGE -->
+                <section class="page" id="page-admin-management">
+                    <div class="page-header">
+                        <div>
+                            <h2>Admin Management</h2>
+                            <p>Admin kullanıcıları, giriş güvenliği ve panel ayarları.</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Hesap Bilgileri</h2>
+                            </div>
+                            <form class="form" id="adminAccountForm">
+                                <div class="form-group">
+                                    <label for="adminUsername">Kullanıcı Adı</label>
+                                    <input type="text" id="adminUsername" placeholder="admin">
+                                </div>
+                                <div class="form-group">
+                                    <label for="adminEmail">Admin E-posta</label>
+                                    <input type="text" id="adminEmail" placeholder="admin@mail.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="adminPassword">Şifre (değiştir)</label>
+                                    <input type="text" id="adminPassword" placeholder="Yeni şifre">
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Güncelle</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Panel Ayarları</h2> 
+                            </div>
+                            <form class="form" id="adminPanelSettingsForm">
+                                <div class="form-group">
+                                    <label for="panelLanguage">Dil</label>
+                                    <select id="panelLanguage">
+                                        <option value="tr">Türkçe</option>
+                                        <option value="en">English</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="panelTheme">Tema</label>
+                                    <select id="panelTheme">
+                                        <option value="dark">Dark</option>
+                                        <option value="light">Light</option>
+                                    </select>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- Modals (örnek: Proje Ekle/Düzenle) -->
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+
+    <div class="modal" id="modalProject">
+        <div class="modal-header">
+            <h2 id="modalProjectTitle">Yeni Proje</h2>
+            <button class="modal-close" data-modal-close>
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form class="form" id="projectForm">
+                <input type="hidden" id="projectId">
+                <div class="form-group">
+                    <label for="projectTitle">Proje Başlığı</label>
+                    <input type="text" id="projectTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="projectCategory">Kategori</label>
+                    <input type="text" id="projectCategory" required>
+                </div>
+                <div class="form-group">
+                    <label for="projectStatus">Durum</label>
+                    <select id="projectStatus">
+                        <option value="published">Yayında</option>
+                        <option value="draft">Taslak</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="projectDate">Tarih</label>
+                    <input type="date" id="projectDate">
+                </div>
+                <div class="form-group">
+                    <label for="projectDescription">Açıklama</label>
+                    <textarea id="projectDescription" rows="4"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-outline" data-modal-close>Vazgeç</button>
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Script -->
+    <script src="assets/js/admin.js"></script>
+</body>
+
+</html>

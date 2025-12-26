@@ -1,0 +1,57 @@
+﻿@model List<MyPortfolio.Models.Entity.TblCertificates>
+@{
+    ViewBag.Title = "Certificates";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="page-header">
+    <div>
+        <h2>Certificates</h2>
+        <p>Sertifikalarını buradan yönet.</p>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h2>Sertifika Listesi</h2>
+        <a href="/Certificate/Add" class="btn btn-primary btn-sm">
+            <i class="fa-solid fa-plus"></i> Yeni Sertifika
+        </a>
+    </div>
+
+    <div class="table-wrapper">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="width:50px;">Id</th>
+                    <th>Title</th>
+                    <th>Institution</th>
+                    <th>Date</th>
+                    <th>Link</th>
+                    <th style="width:150px;">İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Title</td>
+                        <td>@item.Institution</td>
+                        <td>@item.Date</td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(item.CertificateLink))
+                            {
+                                <a href="@item.CertificateLink" target="_blank">Gör</a>
+                            }
+                        </td>
+                        <td>
+                            <a href="/Certificate/Edit/@item.Id" class="btn btn-sm btn-outline">Düzenle</a>
+                            <a href="/Certificate/Delete/@item.Id" class="btn btn-sm btn-outline" onclick="return confirm('Silmek istediğinize emin misiniz?');">Sil</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+﻿@model List<MyPortfolio.Models.Entity.TblFirst>
+@{
+    ViewBag.Title = "Home Page (Hero)";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="page-header">
+    <div>
+        <h2>Home Page (Hero)</h2>
+        <p>TblFirst tablosundaki ana sayfa içeriklerini buradan yönet.</p>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h2>Hero Listesi</h2>
+    </div>
+
+    <div class="table-wrapper">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="width:50px;">Id</th>
+                    <th>Title</th>
+                    <th>Subtitle</th>
+                    <th>ImageUrl</th>
+                    <th style="width:150px;">İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Title</td>
+                        <td>@item.Subtitle</td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(item.ImageUrl))
+                            {
+                                <img src="@item.ImageUrl" alt="Hero" style="height: 40px; border-radius: 4px;">
+                            }
+                        </td>
+                        <td>
+                            <a href="/Feature/Edit/@item.Id" class="btn btn-sm btn-outline">Düzenle</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

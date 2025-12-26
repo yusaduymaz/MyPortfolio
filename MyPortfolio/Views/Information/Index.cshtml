@@ -1,0 +1,48 @@
+﻿@model List<MyPortfolio.Models.Entity.TblInformation>
+@{
+    ViewBag.Title = "Information";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="page-header">
+    <div>
+        <h2>Information Listesi</h2>
+    </div>
+    <div>
+        <a href="/Information/Add" class="btn btn-primary">Yeni Information Ekle</a>
+    </div>
+</div>
+
+<div class="card">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Icon</th>
+                <th>Title</th>
+                <th>Subtitle</th>
+                <th>Button</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td><i class="@item.Icon"></i> @item.Icon</td>
+                    <td>@item.Title</td>
+                    <td>@item.Subtitle</td>
+                    <td>@item.Button</td>
+                    <td>
+                        <a href="/Information/Edit/@item.Id" class="btn btn-sm btn-outline">Düzenle</a>
+                        <a href="/Information/Delete/@item.Id" class="btn btn-sm btn-outline"
+                           onclick="return confirm('Silmek istediğinize emin misiniz?');">
+                            Sil
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

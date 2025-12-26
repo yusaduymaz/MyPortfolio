@@ -1,0 +1,51 @@
+﻿@model List<MyPortfolio.Models.Entity.TblExpertiseCards>
+@{
+    ViewBag.Title = "Expertise Cards";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="page-header">
+    <div>
+        <h2>Expertise Cards</h2>
+        <p>Uzmanlık kartlarını buradan yönet.</p>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h2>Kart Listesi</h2>
+        <a href="/Skill/AddCard" class="btn btn-primary btn-sm">
+            <i class="fa-solid fa-plus"></i> Yeni Kart
+        </a>
+    </div>
+
+    <div class="table-wrapper">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="width:50px;">Id</th>
+                    <th>Title</th>
+                    <th>Subtitle</th>
+                    <th>Tag</th>
+                    <th style="width:200px;">İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Title</td>
+                        <td>@item.Subtitle</td>
+                        <td>@item.Tag</td>
+                        <td>
+                            <a href="/Skill/Items/@item.Id" class="btn btn-sm btn-primary">Maddeler</a>
+                            <a href="/Skill/EditCard/@item.Id" class="btn btn-sm btn-outline">Düzenle</a>
+                            <a href="/Skill/DeleteCard/@item.Id" class="btn btn-sm btn-outline" onclick="return confirm('Silmek istediğinize emin misiniz?');">Sil</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

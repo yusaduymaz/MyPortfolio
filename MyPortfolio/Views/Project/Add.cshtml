@@ -1,0 +1,57 @@
+﻿@model MyPortfolio.Models.Entity.TblProjects
+@{
+    ViewBag.Title = "Yeni Proje";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="page-header">
+    <div>
+        <h2>Yeni Proje Ekle</h2>
+    </div>
+</div>
+
+<div class="card">
+    <form method="post" class="form">
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" name="Title" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea name="Description" rows="4" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Image URL</label>
+            <input type="text" name="ImageUrl" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Github URL</label>
+            <input type="text" name="GithubUrl" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Demo URL</label>
+            <input type="text" name="DemoUrl" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Created Date</label>
+            <input type="date" name="CreatedDate" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Sort Order</label>
+            <input type="text" name="SortOrder" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Situation (Durum Metni)</label>
+            <input type="text" name="Situation" class="form-control" placeholder="Tamamlandı, Devam Ediyor vb." />
+        </div>
+        <div class="form-group">
+            <label>
+                <input type="checkbox" name="IsActive" value="true" checked /> Aktif mi?
+            </label>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+            <a href="/Project/Index" class="btn btn-outline">Vazgeç</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,34 @@
+﻿@model MyPortfolio.Models.Entity.TblMessages
+@{
+    ViewBag.Title = "Mesaj Detayı";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="page-header">
+    <div>
+        <h2>Mesaj Detayı</h2>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h2>@Model.Subject</h2>
+        <span class="text-muted">@Model.SentDate</span>
+    </div>
+    <div class="card-body" style="padding: 1.5rem;">
+        <div class="form-group">
+            <label>Gönderen:</label>
+            <p><strong>@Model.FullName</strong> &lt;@Model.Email&gt;</p>
+        </div>
+        <br />
+        <br />
+        <div class="form-group">
+            <label>Mesaj İçeriği:</label>
+            <p style="white-space: pre-wrap;">@Model.Content</p>
+        </div>
+    </div>
+    <div class="card-footer">
+        <a href="mailto:@Model.Email" class="btn btn-primary">Yanıtla</a>
+        <a href="/Message/Index" class="btn btn-outline">Geri Dön</a>
+    </div>
+</div>

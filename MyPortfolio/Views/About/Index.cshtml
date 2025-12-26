@@ -1,0 +1,105 @@
+﻿@model MyPortfolio.Models.AboutViewModel
+@{
+    ViewBag.Title = "About Me";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="page-header">
+    <div>
+        <h2>About Me</h2>
+        <p>Hakkımda alanı ve kartları buradan yönet.</p>
+    </div>
+</div>
+
+<div class="grid grid-2">
+    <!-- SOL: TblAbouts (tek kayıt) -->
+    <div class="card">
+        <div class="card-header">
+            <h2>Hakkımda (TblAbouts)</h2>
+        </div>
+
+        <form action="/About/UpdateAbout" method="post" class="form">
+            <input type="hidden" name="Id" value="@Model.About.Id" />
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" name="Title" value="@Model.About.Title" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label>SubTitle</label>
+                <input type="text" name="SubTitle" value="@Model.About.SubTitle" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea name="Description" rows="4" class="form-control">@Model.About.Description</textarea>
+            </div>
+            <div class="form-group">
+                <label>Description 2</label>
+                <textarea name="Description2" rows="4" class="form-control">@Model.About.Description2</textarea>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Güncelle</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- SAĞ: TblAboutsCards (kart listesi + kart formu) -->
+    <div class="card">
+        <div class="card-header">
+            <h2>Hakkımda Kartları</h2>
+        </div>
+
+        <!-- Kart Listesi -->
+        <div class="table-wrapper" style="margin-bottom:1rem;">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th style="width:40px;">Id</th>
+                        <th>Icon</th>
+                        <th>Başlık</th>
+                        <th style="width:120px;">İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var card in Model.AboutCards)
+                    {
+                        <tr>
+                            <td>@card.Id</td>
+                            <td><i class="@card.CardIcon"></i></td>
+                            <td>@card.CardBaslik</td>
+                            <td>
+                                <a href="/About/EditCard/@card.Id" class="btn btn-sm btn-outline">Düzenle</a>
+                                <a href="/About/DeleteCard/@card.Id" class="btn btn-sm btn-outline" onclick="return confirm('Silmek istediğinize emin misiniz?');">Sil</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <hr style="border-color: rgba(148,163,184,0.3); margin: .75rem 0;" />
+
+        <!-- Kart Formu -->
+        <form action="/About/AddCard" method="post" class="form">
+            <h3 style="font-size:.9rem; margin-bottom:.25rem;">Yeni Kart Ekle</h3>
+            <div class="form-group">
+                <label>Card Icon (FontAwesome)</label>
+                <input type="text" name="CardIcon" placeholder="fa-solid fa-code" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Card Başlık</label>
+                <input type="text" name="CardBaslik" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Card Alt Başlık</label>
+                <input type="text" name="CardAltBaslik" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Card Alt Başlık 2</label>
+                <input type="text" name="CardAltBaslik2" class="form-control" />
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Kart Ekle</button>
+            </div>
+        </form>
+    </div>
+</div>

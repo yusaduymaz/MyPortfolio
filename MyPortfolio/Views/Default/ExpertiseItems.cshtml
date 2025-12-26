@@ -1,0 +1,16 @@
+﻿@using MyPortfolio.Models.Entity
+@model List<TblExpertiseItems>
+
+<div class="expertise-card__content">
+    <ul class="expertise-card__list">
+        @foreach (var x in Model)
+        {
+            <li class="expertise-card__item">
+                <i class="@x.IconClass expertise-card__item-icon" aria-hidden="true"></i>
+                <div class="expertise-card__item-content">
+                    <strong>@x.Title:</strong> @x.Description
+                </div>
+            </li>
+        }
+    </ul>
+</div>

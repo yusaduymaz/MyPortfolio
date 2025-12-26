@@ -1,0 +1,49 @@
+﻿@model List<MyPortfolio.Models.Entity.TblAdmins>
+@{
+    ViewBag.Title = "Admins";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="page-header">
+    <div>
+        <h2>Admins</h2>
+        <p>Sistemde kayıtlı admin kullanıcılarını buradan yönet.</p>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h2>Admin Listesi</h2>
+        <a href="/Admins/Add" class="btn btn-primary btn-sm">
+            <i class="fa-solid fa-plus"></i> Yeni Admin
+        </a>
+    </div>
+
+    <div class="table-wrapper">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="width:60px;">Id</th>
+                    <th>Email</th>
+                    <th style="width:200px;">İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Email</td>
+                        <td>
+                            <a href="/Admins/Edit/@item.Id" class="btn btn-sm btn-outline">Düzenle</a>
+                            <a href="/Admins/Delete/@item.Id" class="btn btn-sm btn-outline"
+                               onclick="return confirm('Silmek istediğinize emin misiniz?');">
+                                Sil
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

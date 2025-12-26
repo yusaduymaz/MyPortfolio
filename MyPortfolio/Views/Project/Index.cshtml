@@ -1,0 +1,71 @@
+﻿@model List<MyPortfolio.Models.Entity.TblProjects>
+@{
+    ViewBag.Title = "Projects";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="page-header">
+    <div>
+        <h2>Projects</h2>
+        <p>Portfolyo projelerini buradan yönet.</p>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h2>Proje Listesi</h2>
+        <a href="/Project/Add" class="btn btn-primary btn-sm">
+            <i class="fa-solid fa-plus"></i> Yeni Proje
+        </a>
+    </div>
+
+    <div class="table-wrapper">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="width:50px;">Id</th>
+                    <th>Title</th>
+                    <th>Github</th>
+                    <th>Demo</th>
+                    <th>Durum</th>
+                    <th style="width:150px;">İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Title</td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(item.GithubUrl))
+                            {
+                                <a href="@item.GithubUrl" target="_blank">Github</a>
+                            }
+                        </td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(item.DemoUrl))
+                            {
+                                <a href="@item.DemoUrl" target="_blank">Demo</a>
+                            }
+                        </td>
+                        <td>
+                            @if (item.IsActive)
+                            {
+                                <span class="badge badge-success">Aktif</span>
+                            }
+                            else
+                            {
+                                <span class="badge badge-warning">Pasif</span>
+                            }
+                        </td>
+                        <td>
+                            <a href="/Project/Edit/@item.Id" class="btn btn-sm btn-outline">Düzenle</a>
+                            <a href="/Project/Delete/@item.Id" class="btn btn-sm btn-outline" onclick="return confirm('Silmek istediğinize emin misiniz?');">Sil</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

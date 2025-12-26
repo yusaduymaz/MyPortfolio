@@ -1,0 +1,20 @@
+﻿@using MyPortfolio.Models.Entity
+@model List<TblAbouts>
+
+@foreach (var x in Model)
+{
+
+    <div class="about__header">
+        <h1 class="about__title">@x.Title</h1>
+        <span class="about__badge">@x.SubTitle</span>
+    </div>
+
+    <div class="about__bio">
+        <p class="about__text">
+            @x.Description
+        </p>
+        <p class="about__text">
+            @x.Description2
+        </p>
+    </div>
+}

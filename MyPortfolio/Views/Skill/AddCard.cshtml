@@ -1,0 +1,32 @@
+﻿@model MyPortfolio.Models.Entity.TblExpertiseCards
+@{
+    ViewBag.Title = "Yeni Kart";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="page-header">
+    <div>
+        <h2>Yeni Uzmanlık Kartı</h2>
+    </div>
+</div>
+
+<div class="card">
+    <form method="post" class="form">
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" name="Title" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label>Subtitle</label>
+            <input type="text" name="Subtitle" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Tag</label>
+            <input type="text" name="Tag" class="form-control" />
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+            <a href="/Skill/Index" class="btn btn-outline">Vazgeç</a>
+        </div>
+    </form>
+</div>

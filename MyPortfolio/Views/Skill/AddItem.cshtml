@@ -1,0 +1,33 @@
+﻿@model MyPortfolio.Models.Entity.TblExpertiseItems
+@{
+    ViewBag.Title = "Yeni Madde";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="page-header">
+    <div>
+        <h2>Yeni Madde Ekle</h2>
+    </div>
+</div>
+
+<div class="card">
+    <form method="post" class="form">
+        <input type="hidden" name="ExpertiseCardId" value="@ViewBag.CardId" />
+        <div class="form-group">
+            <label>Icon Class (FontAwesome)</label>
+            <input type="text" name="IconClass" class="form-control" placeholder="fa-solid fa-code" />
+        </div>
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" name="Title" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea name="Description" rows="4" class="form-control"></textarea>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+            <a href="/Skill/Items/@ViewBag.CardId" class="btn btn-outline">Vazgeç</a>
+        </div>
+    </form>
+</div>

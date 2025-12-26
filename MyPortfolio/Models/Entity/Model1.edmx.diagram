@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cc4b4f01bbbd4143a588cd8c89e71e51" Name="Diagram1">
+        <EntityTypeShape EntityType="MyPortfolioDBModel.TblAbouts" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyPortfolioDBModel.TblAboutsCards" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyPortfolioDBModel.TblAdmins" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyPortfolioDBModel.TblCertificates" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyPortfolioDBModel.TblExpertiseCards" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyPortfolioDBModel.TblExpertiseItems" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyPortfolioDBModel.TblFirst" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyPortfolioDBModel.TblMessages" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyPortfolioDBModel.TblSocialMedia" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="MyPortfolioDBModel.FK_ExpertiseItems_ExpertiseCards" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MyPortfolioDBModel.TblProjects" Width="1.5" PointX="3.375" PointY="8" />
+        <EntityTypeShape EntityType="MyPortfolioDBModel.TblProjectTechnologies" Width="1.5" PointX="5.625" PointY="8.5" />
+        <AssociationConnector Association="MyPortfolioDBModel.FK_TblProjectTechnologies_Project" />
+        <EntityTypeShape EntityType="MyPortfolioDBModel.TblInformation" Width="1.5" PointX="8.375" PointY="7.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

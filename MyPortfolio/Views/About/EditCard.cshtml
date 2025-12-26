@@ -1,0 +1,37 @@
+﻿@model MyPortfolio.Models.Entity.TblAboutsCards
+@{
+    ViewBag.Title = "Kart Düzenle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="page-header">
+    <div>
+        <h2>Kart Düzenle</h2>
+    </div>
+</div>
+
+<div class="card" style="max-width: 600px; margin: 0 auto;">
+    <form method="post" class="form">
+        @Html.HiddenFor(x => x.Id)
+        <div class="form-group">
+            <label>Card Icon (FontAwesome)</label>
+            <input type="text" name="CardIcon" value="@Model.CardIcon" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Card Başlık</label>
+            <input type="text" name="CardBaslik" value="@Model.CardBaslik" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Card Alt Başlık</label>
+            <input type="text" name="CardAltBaslik" value="@Model.CardAltBaslik" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Card Alt Başlık 2</label>
+            <input type="text" name="CardAltBaslik2" value="@Model.CardAltBaslik2" class="form-control" />
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Güncelle</button>
+            <a href="/About/Index" class="btn btn-outline">Vazgeç</a>
+        </div>
+    </form>
+</div>

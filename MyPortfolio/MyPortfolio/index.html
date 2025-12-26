@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Muhammed Yuşa Duymaz - Python, SQL ve Web Geliştirme alanında yetkin bir Senior Frontend Developer ve UI/UX Designer portföyü. Modern web çözümleri ve kullanıcı deneyimi odaklı projeler.">
+    <meta name="author" content="Muhammed Yuşa Duymaz">
+    <meta name="keywords"
+        content="Frontend Developer, UI/UX Designer, Yazılım Geliştirici, Python, SQL, Web Geliştirme, React, JavaScript, Portfolio">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Muhammed Yuşa Duymaz - Senior Frontend Developer & UI/UX Designer">
+    <meta property="og:description"
+        content="Modern web çözümleri ve kullanıcı deneyimi odaklı projeler geliştiren Senior Frontend Developer ve UI/UX Designer portföyü.">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Muhammed Yuşa Duymaz - Senior Frontend Developer & UI/UX Designer">
+    <meta name="twitter:description"
+        content="Modern web çözümleri ve kullanıcı deneyimi odaklı projeler geliştiren Senior Frontend Developer ve UI/UX Designer portföyü.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <!-- Google Fonts - Modern Font Pairing -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <title>Muhammed Yuşa Duymaz - Senior Frontend Developer & UI/UX Designer</title>
+</head>
+
+<body>
+    <!--===== HEADER =====-->
+    <header class="l-header" role="banner">
+        <nav class="nav bd-grid" role="navigation" aria-label="Ana navigasyon">
+            <div>
+                <a href="#home" class="nav__logo" aria-label="Ana sayfa">Muhammed Yuşa Duymaz</a>
+            </div>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list" role="menubar">
+                    <li class="nav__item" role="none"><a href="#home" class="nav__link active-link" role="menuitem">Ana
+                            Sayfa</a></li>
+                    <li class="nav__item" role="none"><a href="#about" class="nav__link" role="menuitem">Hakkımda</a>
+                    </li>
+                    <li class="nav__item" role="none"><a href="#expertise" class="nav__link"
+                            role="menuitem">Uzmanlıklar</a></li>
+                    <li class="nav__item" role="none"><a href="#work" class="nav__link" role="menuitem">Sertifikalar</a>
+                    </li>
+                    <li class="nav__item" role="none"><a href="#projects" class="nav__link" role="menuitem">Projeler</a>
+                    </li>
+                    <li class="nav__item" role="none"><a href="#contact" class="nav__link" role="menuitem">İletişim</a>
+                    </li>
+                    <li class="nav__item" role="none"><a href="loginpanel/login.html" class="nav__link nav__link--btn"
+                            role="menuitem">Giriş Yap</a></li>
+                </ul>
+            </div>
+
+            <button class="nav__toggle" id="nav-toggle" aria-label="Menüyü aç/kapat" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="nav__overlay" id="nav-overlay" aria-hidden="true"></div>
+
+    <main class="l-main">
+        <!--===== HOME =====-->
+        <section class="home bd-grid" id="home" aria-labelledby="home-title">
+            <div class="home__data">
+                <p class="home__greeting" aria-label="Karşılama metni">Merhaba, Ben</p>
+                <h1 class="home__title" id="home-title">
+                    <span class="home__title-color">Muhammed Yuşa Duymaz</span><br>
+                    <span class="home__title-subtitle">Software Developer</span><br>
+                    <span class="home__title-subtitle">Fullstack Developer / Data Analyst</span>
+                </h1>
+                <p class="home__description">Modern web çözümleri ve kullanıcı deneyimi odaklı projeler geliştiriyorum.
+                </p>
+
+                <div class="home__buttons">
+                    <a href="#contact" class="button button--primary" aria-label="İletişime geç">İletişime Geç</a>
+                    <a href="#projects" class="button button--secondary"
+                        aria-label="Projelerimi görüntüle">Projelerim</a>
+                </div>
+            </div>
+
+            <div class="home__social" role="list" aria-label="Sosyal medya linkleri">
+                <a href="https://linkedin.com/in/yusaduymazz" target="_blank" rel="noopener noreferrer"
+                    class="home__social-icon" aria-label="LinkedIn profilim" role="listitem">
+                    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                </a>
+                <a href="https://github.com/yusaduymaz" target="_blank" rel="noopener noreferrer"
+                    class="home__social-icon" aria-label="GitHub profilim" role="listitem">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://twitter.com/myusaduymaz" target="_blank" rel="noopener noreferrer"
+                    class="home__social-icon" aria-label="Twitter profilim" role="listitem">
+                    <i class="fab fa-x-twitter" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            <div class="home__img">
+                <div class="home__blob-container">
+                    <div class="home__blob-bg"></div>
+                    <img class="home__blob-img" src="assets/img/about_image.png" alt="Muhammed Yuşa Duymaz" />
+                </div>
+            </div>
+        </section>
+
+        <!--===== ABOUT =====-->
+        <section class="about section" id="about" aria-labelledby="about-title">
+            <h2 class="section-title" id="about-title">Hakkımda</h2>
+
+            <div class="about__container bd-grid">
+                <!-- Content Side (Left) -->
+                <div class="about__content">
+                    <div class="about__header">
+                        <h1 class="about__title">Muhammed Yuşa Duymaz</h1>
+                        <span class="about__badge">Full Stack Developer & AI Engineer</span>
+                    </div>
+
+                    <div class="about__bio">
+                        <p class="about__text">
+                            Modern web teknolojilerini veri bilimiyle harmanlayan bir yazılım mühendisiyim.
+                            <span class="tech-highlight">.Net Core</span> ile kurumsal ölçekte güvenli backend
+                            mimarileri tasarlarken,
+                            <span class="tech-highlight">React</span> ekosistemiyle performansı yüksek kullanıcı
+                            arayüzleri geliştiriyorum.
+                        </p>
+                        <p class="about__text">
+                            Sadece kod yazmıyor, sistemlere akıl katıyorum.
+                            <span class="tech-highlight">Python</span> ve Yapay Zeka
+                            <span class="tech-highlight">(LLM/RAG)</span> yetkinliklerimle, veriyi anlamlı içgörülere
+                            dönüştüren akıllı çözümler üretiyorum.
+                            Karmaşık problemleri, SOLID prensiplerine sadık, temiz ve sürdürülebilir kodlarla çözmek en
+                            büyük tutkum.
+                        </p>
+                    </div>
+
+                    <!-- Statistics Cards -->
+                    <div class="about__stats">
+                        <div class="stat-card glass-card">
+                            <div class="stat-card__icon">
+                                <i class="fas fa-project-diagram" aria-hidden="true"></i>
+                            </div>
+                            <div class="stat-card__content">
+                                <span class="stat-card__number">15+</span>
+                                <span class="stat-card__label">Tamamlanan Proje</span>
+                                <span class="stat-card__sublabel">Web & AI</span>
+                            </div>
+                        </div>
+
+                        <div class="stat-card glass-card">
+                            <div class="stat-card__icon">
+                                <i class="fas fa-code-branch" aria-hidden="true"></i>
+                            </div>
+                            <div class="stat-card__content">
+                                <span class="stat-card__number">Full Stack</span>
+                                <span class="stat-card__label">Yetkinlik</span>
+                                <span class="stat-card__sublabel">.Net Core,Html,Css,Js,Bootstrap,React</span>
+                            </div>
+                        </div>
+
+                        <div class="stat-card glass-card">
+                            <div class="stat-card__icon">
+                                <i class="fas fa-users" aria-hidden="true"></i>
+                            </div>
+                            <div class="stat-card__content">
+                                <span class="stat-card__number">Data&Ai</span>
+                                <span class="stat-card__label">Yetkinlik</span>
+                                <span class="stat-card__sublabel">Excel,Sql,PowerBI,Tableau,Python</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Side (Right) -->
+
+            </div>
+
+            <!-- Background Decorative Elements -->
+            <div class="about__bg-pattern" aria-hidden="true">
+                <div class="code-snippet">
+                    <span class="code-line"><span class="code-keyword">const</span> <span
+                            class="code-variable">engineer</span> = <span class="code-string">"Hybrid"</span>;</span>
+                    <span class="code-line"><span class="code-keyword">function</span> <span
+                            class="code-function">solveProblem</span>() {</span>
+                    <span class="code-line"> <span class="code-keyword">return</span> <span class="code-string">"Clean
+                            Code"</span>;</span>
+                    <span class="code-line">}</span>
+                </div>
+            </div>
+        </section>
+
+        <!--===== EXPERTISE SECTION =====-->
+        <section class="expertise section" id="expertise" aria-labelledby="expertise-title">
+            <h2 class="section-title" id="expertise-title">Uzmanlık Alanlarım</h2>
+
+            <div class="expertise__container bd-grid">
+                <!-- Full Stack Developer Card -->
+                <article class="expertise-card expertise-card--fullstack glass-card">
+                    <div class="expertise-card__header">
+                        <div class="expertise-card__icon-wrapper">
+                            <i class="fas fa-code expertise-card__icon expertise-card__icon--java"
+                                aria-hidden="true"></i>
+                            <i class="fab fa-react expertise-card__icon expertise-card__icon--react"
+                                aria-hidden="true"></i>
+                        </div>
+                        <div class="expertise-card__title-wrapper">
+                            <h3 class="expertise-card__title">Full Stack Developer</h3>
+                            <p class="expertise-card__subtitle">.Net Core</p>
+                            <span class="expertise-card__tag">Ölçeklenebilir Web Mimarileri</span>
+                        </div>
+                    </div>
+
+                    <div class="expertise-card__content">
+                        <ul class="expertise-card__list">
+                            <li class="expertise-card__item">
+                                <i class="fab fa-react expertise-card__item-icon" aria-hidden="true"></i>
+                                <div class="expertise-card__item-content">
+                                    <strong>Modern Frontend:</strong> React.js ile modüler (Component-Based) mimari
+                                     ve ES6+ JavaScript standartlarına uygun kodlama. İstemci taraflı state yönetimi
+                                     için React Hooks ve Context API kullanımı; HTML5, CSS3 ve Bootstrap grid sistemi ile responsive (mobil uyumlu) arayüz tasarımı.
+
+                                </div>
+                            </li>
+                            <li class="expertise-card__item">
+                                <i class="fab fa-java expertise-card__item-icon" aria-hidden="true"></i>
+                                <div class="expertise-card__item-content">
+                                    <strong>Kurumsal Backend:</strong> ASP.NET Core ile Dependency Injection (DI) ve
+                                    Middleware/Action Filter (AOP yaklaşımları) yapılarına dayalı, ölçeklenebilir RESTful Web API mimarileri geliştirme.
+                                </div>
+                            </li>
+                            <li class="expertise-card__item">
+                                <i class="fas fa-database expertise-card__item-icon" aria-hidden="true"></i>
+                                <div class="expertise-card__item-content">
+                                    <strong>Veritabanı & ORM:</strong> PostgreSQL veya MSSQL veritabanı üzerinde
+                                    Entity Framework Core (EF Core) kullanarak Code-First yaklaşımıyla veri modelleme ve performans optimizasyonu.
+                                </div>
+                            </li>
+                            <li class="expertise-card__item">
+                                <i class="fas fa-shield-alt expertise-card__item-icon" aria-hidden="true"></i>
+                                <div class="expertise-card__item-content">
+                                    <strong>Güvenlik:</strong> ASP.NET Core Identity ve JWT (JSON Web Token)
+                                    entegrasyonu ile Claims-tabanlı kimlik doğrulama (Authentication) ve yetkilendirme (Authorization) altyapıları.
+                            </li>
+                            <li class="expertise-card__item">
+                                <i class="fas fa-cogs expertise-card__item-icon" aria-hidden="true"></i>
+                                <div class="expertise-card__item-content">
+                                    <strong>Mühendislik Standartları:</strong> OOP, SOLID prensipleri ve Agile/Scrum
+                                    metodolojileri ile test edilebilir (JUnit/Cypress), temiz kod üretimi.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Data Scientist & AI Engineer Card -->
+                <article class="expertise-card expertise-card--data glass-card">
+                    <div class="expertise-card__header">
+                        <div class="expertise-card__icon-wrapper">
+                            <i class="fab fa-python expertise-card__icon expertise-card__icon--python"
+                                aria-hidden="true"></i>
+                            <i class="fas fa-brain expertise-card__icon expertise-card__icon--ai"
+                                aria-hidden="true"></i>
+                        </div>
+                        <div class="expertise-card__title-wrapper">
+                            <h3 class="expertise-card__title">Data Scientist & AI Engineer</h3>
+                            <p class="expertise-card__subtitle">Python & AI</p>
+                            <span class="expertise-card__tag">Veriden Değere & Yapay Zeka Çözümleri</span>
+                        </div>
+                    </div>
+
+                    <div class="expertise-card__content">
+                        <ul class="expertise-card__list">
+                            <li class="expertise-card__item">
+                                <i class="fab fa-python expertise-card__item-icon" aria-hidden="true"></i>
+                                <div class="expertise-card__item-content">
+                                    <strong>Veri Analizi:</strong> Python (Pandas, NumPy) ile karmaşık veri setlerini
+                                    temizleme, işleme ve istatistiksel analiz (EDA).
+                                </div>
+                            </li>
+                            <li class="expertise-card__item">
+                                <i class="fab fa-python expertise-card__item-icon" aria-hidden="true"></i>
+                                <div class="expertise-card__item-content">
+                                    <strong>Veri Görselleştirme:</strong> Ham verinin işlenmesi ve temizlenmesi
+                                    süreçlerinde SQL ve Excel (Advanced) kullanımı. Veri okuryazarlığı kapsamında
+                                     trendlerin ve desenlerin tespiti; Power BI (veya Tableau) ile karar verici mekanizmalar
+                                     için dinamik raporlar ve görsel paneller (Dashboard) oluşturulması. İstatistiksel veri
+                                     temelleri ve KPI takibi konusunda yetkinlik.
+                                </div>
+                            </li>
+                            <li class="expertise-card__item">
+                                <i class="fas fa-cloud expertise-card__item-icon" aria-hidden="true"></i>
+                                <div class="expertise-card__item-content">
+                                    <strong>Veri Tabanı & Big Data:</strong> İleri seviye SQL sorgulama ve Google
+                                    BigQuery ile büyük veri ambarı yönetimi.
+                                </div>
+                            </li>
+                            <li class="expertise-card__item">
+                                <i class="fas fa-chart-line expertise-card__item-icon" aria-hidden="true"></i>
+                                <div class="expertise-card__item-content">
+                                    <strong>Makine Öğrenmesi (ML):</strong> ...
+                                </div>
+                            </li>
+                            <li class="expertise-card__item">
+                                <i class="fas fa-robot expertise-card__item-icon" aria-hidden="true"></i>
+                                <div class="expertise-card__item-content">
+                                    <strong>Derin Öğrenme & LLM:</strong> ...
+                                </div>
+                            </li>
+                            <li class="expertise-card__item">
+                                <i class="fab fa-docker expertise-card__item-icon" aria-hidden="true"></i>
+                                <div class="expertise-card__item-content">
+                                    <strong>MLOps & Deployment:</strong> ...
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!--===== CERTIFICATES SECTION =====-->
+        <section class="certificates section" id="work" aria-labelledby="certificates-title">
+            <h2 class="section-title" id="certificates-title">Sertifikalar</h2>
+
+            <div class="certificates__container bd-grid">
+                <!-- Certificate Card 1 -->
+                <article class="certificate-card glass-card">
+                    <div class="certificate-card__logo">
+                        <i class="fas fa-graduation-cap certificate-card__icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="certificate-card__content">
+                        <h3 class="certificate-card__title">Python ile Programlamaya Giriş</h3>
+                        <p class="certificate-card__institution">Udemy</p>
+                        <p class="certificate-card__date"><i class="far fa-calendar-alt" aria-hidden="true"></i> Aralık
+                            2024</p>
+                    </div>
+                    <a href="#" class="certificate-card__button" aria-label="Sertifikayı görüntüle">
+                        <span>Görüntüle</span>
+                        <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                    </a>
+                </article>
+
+                <!-- Certificate Card 2 -->
+                <article class="certificate-card glass-card">
+                    <div class="certificate-card__logo">
+                        <i class="fas fa-graduation-cap certificate-card__icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="certificate-card__content">
+                        <h3 class="certificate-card__title">Web Tasarım Temelleri</h3>
+                        <p class="certificate-card__institution">BTK Akademi</p>
+                        <p class="certificate-card__date"><i class="far fa-calendar-alt" aria-hidden="true"></i> Kasım
+                            2024</p>
+                    </div>
+                    <a href="#" class="certificate-card__button" aria-label="Sertifikayı görüntüle">
+                        <span>Görüntüle</span>
+                        <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                    </a>
+                </article>
+
+                <!-- Certificate Card 3 -->
+                <article class="certificate-card glass-card">
+                    <div class="certificate-card__logo">
+                        <i class="fab fa-google certificate-card__icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="certificate-card__content">
+                        <h3 class="certificate-card__title">SQL ile Veritabanı Yönetimi</h3>
+                        <p class="certificate-card__institution">Coursera</p>
+                        <p class="certificate-card__date"><i class="far fa-calendar-alt" aria-hidden="true"></i> Ekim
+                            2024</p>
+                    </div>
+                    <a href="#" class="certificate-card__button" aria-label="Sertifikayı görüntüle">
+                        <span>Görüntüle</span>
+                        <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <!--===== PROJECTS SECTION =====-->
+        <section class="projects section" id="projects" aria-labelledby="projects-title">
+            <h2 class="section-title" id="projects-title">Projeler</h2>
+            <div class="projects__container bd-grid">
+                <!-- Project Card 1 -->
+                <article class="project-card glass-card">
+                    <div class="project-card__thumbnail">
+                        <img src="assets/img/eticarett.png" alt="E-Ticaret Platformu ekran görüntüsü" loading="lazy">
+                        <div class="project-card__overlay">
+                            <div class="ribbon ribbon--project"><span>SOON</span></div>
+                        </div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">E-Ticaret Platformu</h3>
+                        <p class="project-card__description">
+                            Kullanıcıların ürünleri görebileceği, sepet işlemleri yapabileceği ve ödeme
+                            gerçekleştirebileceği modern bir e-ticaret platformu. Responsive tasarım ve güvenli ödeme
+                            entegrasyonu içerir.
+                        </p>
+                        <div class="project-card__tech-stack">
+                            <span class="tech-badge tech-badge--react">React</span>
+                            <span class="tech-badge tech-badge--node">.Net Core</span>
+                            <span class="tech-badge tech-badge--sql">Mssql</span>
+                            <span class="tech-badge tech-badge--html">HTML</span>
+                            <span class="tech-badge tech-badge--css">CSS</span>
+                            <span class="tech-badge tech-badge--js">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="project-card__actions">
+                        <a href="#" class="project-card__button project-card__button--demo" target="_blank"
+                            rel="noopener noreferrer" aria-label="Canlı demo görüntüle">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                            <span>Canlı Demo</span>
+                        </a>
+                        <a href="#" class="project-card__button project-card__button--github" target="_blank"
+                            rel="noopener noreferrer" aria-label="GitHub kodunu görüntüle">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Project Card 2 -->
+                <article class="project-card glass-card">
+                    <div class="project-card__thumbnail">
+                        <img src="assets/img/blog.png" alt="Blog Platformu ekran görüntüsü" loading="lazy">
+                        <div class="project-card__overlay">
+                            <div class="ribbon ribbon--project"><span>SOON</span></div>
+                        </div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Blog Platformu</h3>
+                        <p class="project-card__description">
+                            Yazar ve okuyucular için tasarlanmış, içerik yönetimi ve yorum sistemi içeren interaktif
+                            blog platformu. Markdown desteği ve SEO optimizasyonu özellikleri mevcuttur.
+                        </p>
+                        <div class="project-card__tech-stack">
+                            <span class="tech-badge tech-badge--node">.Net Core</span>
+                            <span class="tech-badge tech-badge--sql">MSSQL</span>
+                            <span class="tech-badge tech-badge--html">HTML5</span>
+                            <span class="tech-badge tech-badge--css">CSS</span>
+                            <span class="tech-badge tech-badge--js">JavaScript</span>
+
+                        </div>
+                    </div>
+                    <div class="project-card__actions">
+                        <a href="#" class="project-card__button project-card__button--demo" target="_blank"
+                            rel="noopener noreferrer" aria-label="Canlı demo görüntüle">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                            <span>Canlı Demo</span>
+                        </a>
+                        <a href="#" class="project-card__button project-card__button--github" target="_blank"
+                            rel="noopener noreferrer" aria-label="GitHub kodunu görüntüle">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Project Card 3 -->
+                <article class="project-card glass-card">
+                    <div class="project-card__thumbnail">
+                        <img src="assets/img/acashub.webp" alt="Görev Yönetim Uygulaması ekran görüntüsü" loading="lazy">
+                        <div class="project-card__overlay">
+                            <div class="ribbon ribbon--project"><span>Active</span></div>
+                        </div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">AcasHub</h3>
+                        <p class="project-card__description">
+                            "Acashub.com'un ön yüz geliştirme süreçlerini yöneterek, estetik ve işlevsel 
+                            bir kullanıcı arayüzü tasarladım. Responsive (mobil uyumlu) tasarım ilkeleriyle,
+                             ziyaretçilerin site içi etkileşimini artıran akıcı bir deneyim oluşturdum. Modern CSS ve 
+                             JavaScript kütüphaneleri kullanarak, hızlı yüklenen ve görsel açıdan zengin, dinamik bir web projesi ortaya koydum."
+                        </p>
+                        <div class="project-card__tech-stack">
+                            <span class="tech-badge tech-badge--html">HTML5</span>
+                            <span class="tech-badge tech-badge--css">CSS3</span>
+                            <span class="tech-badge tech-badge--js">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="project-card__actions">
+                        <a href="https://www.acashub.com/" class="project-card__button project-card__button--demo" target="_blank"
+                            rel="noopener noreferrer" aria-label="Canlı demo görüntüle">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                            <span>Canlı Demo</span>
+                        </a>
+                        <a href="#" class="project-card__button project-card__button--github" target="_blank"
+                            rel="noopener noreferrer" aria-label="GitHub kodunu görüntüle">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </article>
+<!-- 
+                 Project Card 4
+                <article class="project-card glass-card">
+                    <div class="project-card__thumbnail">
+                        <img src="assets/img/website.jpg" alt="Hava Durumu API Uygulaması ekran görüntüsü"
+                            loading="lazy">
+                        <div class="project-card__overlay"></div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Hava Durumu API Uygulaması</h3>
+                        <p class="project-card__description">
+                            Gerçek zamanlı hava durumu bilgilerini gösteren, şehir arama ve konum bazlı hava durumu
+                            özelliklerine sahip responsive web uygulaması. Harici API entegrasyonu içerir.
+                        </p>
+                        <div class="project-card__tech-stack">
+                            <span class="tech-badge tech-badge--html">HTML5</span>
+                            <span class="tech-badge tech-badge--css">CSS3</span>
+                            <span class="tech-badge tech-badge--js">JavaScript</span>
+                            <span class="tech-badge tech-badge--api">REST API</span>
+                        </div>
+                    </div>
+                    <div class="project-card__actions">
+                        <a href="#" class="project-card__button project-card__button--demo" target="_blank"
+                            rel="noopener noreferrer" aria-label="Canlı demo görüntüle">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                            <span>Canlı Demo</span>
+                        </a>
+                        <a href="#" class="project-card__button project-card__button--github" target="_blank"
+                            rel="noopener noreferrer" aria-label="GitHub kodunu görüntüle">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </article>
+
+                Project Card 5 
+                <article class="project-card glass-card">
+                    <div class="project-card__thumbnail">
+                        <img src="assets/img/website.jpg" alt="Kişisel Portfolyo Sitesi ekran görüntüsü" loading="lazy">
+                        <div class="project-card__overlay"></div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">Kişisel Portfolyo Sitesi</h3>
+                        <p class="project-card__description">
+                            Modern ve responsive tasarıma sahip, glassmorphism efektleri kullanan kişisel portfolyo
+                            websitesi. Projeler, yetenekler ve iletişim formu içerir. SEO optimizasyonlu ve erişilebilir
+                            tasarım.
+                        </p>
+                        <div class="project-card__tech-stack">
+                            <span class="tech-badge tech-badge--html">HTML5</span>
+                            <span class="tech-badge tech-badge--css">CSS3</span>
+                            <span class="tech-badge tech-badge--js">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="project-card__actions">
+                        <a href="#" class="project-card__button project-card__button--demo" target="_blank"
+                            rel="noopener noreferrer" aria-label="Canlı demo görüntüle">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                            <span>Canlı Demo</span>
+                        </a>
+                        <a href="#" class="project-card__button project-card__button--github" target="_blank"
+                            rel="noopener noreferrer" aria-label="GitHub kodunu görüntüle">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </article>
+
+                Project Card 6 
+                <article class="project-card glass-card">
+                    <div class="project-card__thumbnail">
+                        <img src="assets/img/website.jpg" alt="To-Do List Uygulaması ekran görüntüsü" loading="lazy">
+                        <div class="project-card__overlay"></div>
+                    </div>
+                    <div class="project-card__content">
+                        <h3 class="project-card__title">To-Do List Uygulaması</h3>
+                        <p class="project-card__description">
+                            Basit ve kullanıcı dostu arayüze sahip, yerel depolama kullanan görev yönetim uygulaması.
+                            Görev ekleme, silme, düzenleme ve tamamlama özellikleri içerir. Minimalist tasarım ve smooth
+                            animasyonlar.
+                        </p>
+                        <div class="project-card__tech-stack">
+                            <span class="tech-badge tech-badge--html">HTML5</span>
+                            <span class="tech-badge tech-badge--css">CSS3</span>
+                            <span class="tech-badge tech-badge--js">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="project-card__actions">
+                        <a href="#" class="project-card__button project-card__button--demo" target="_blank"
+                            rel="noopener noreferrer" aria-label="Canlı demo görüntüle">
+                            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                            <span>Canlı Demo</span>
+                        </a>
+                        <a href="#" class="project-card__button project-card__button--github" target="_blank"
+                            rel="noopener noreferrer" aria-label="GitHub kodunu görüntüle">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </article> 
+-->
+            </div>
+        </section>
+
+        <!--===== CONTACT FORM SECTION =====-->
+        <section class="contact section" id="contact" aria-labelledby="contact-title">
+            <div class="bd-grid">
+                <h2 class="section-title" id="contact-title">İletişime Geçin</h2>
+                <p class="contact__subtitle">Projeleriniz için birlikte çalışalım. Aşağıdaki formu doldurarak bana
+                    ulaşabilirsiniz.</p>
+
+                <div class="contact__container">
+                    <!-- Contact Info Cards (Glassmorphism) -->
+                    <div class="contact__info">
+                        <div class="contact__card glass-card">
+                            <div class="contact__card-icon">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="contact__card-title">E-posta</h3>
+                            <p class="contact__card-info">yusaduymazz@gmail.com</p>
+                            <a href="mailto:info@businessname.com" class="contact__card-link">Mesaj Gönder <i
+                                    class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+
+                        <div class="contact__card glass-card">
+                            <div class="contact__card-icon">
+                                <i class="fas fa-phone" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="contact__card-title">Telefon</h3>
+                            <p class="contact__card-info">+90 555 555 55 55</p>
+                            <a href="tel:+905555555555" class="contact__card-link">Ara <i class="fas fa-arrow-right"
+                                    aria-hidden="true"></i></a>
+                        </div>
+
+                        <div class="contact__card glass-card">
+                            <div class="contact__card-icon">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="contact__card-title">Konum</h3>
+                            <p class="contact__card-info">İstanbul, Türkiye</p>
+                            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer"
+                                class="contact__card-link">Haritada Gör <i class="fas fa-arrow-right"
+                                    aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form (Glassmorphism) -->
+                    <form class="contact__form glass-card" id="contact-form" novalidate aria-label="İletişim formu">
+                        <div class="contact__form-group">
+                            <label for="name" class="contact__form-label">Adınız Soyadınız <span
+                                    class="required">*</span></label>
+                            <div class="contact__form-input-wrapper">
+                                <i class="fas fa-user contact__form-icon" aria-hidden="true"></i>
+                                <input type="text" id="name" name="name" class="contact__form-input"
+                                    placeholder="Adınız ve soyadınız" required aria-required="true"
+                                    aria-describedby="name-error">
+                            </div>
+                            <span class="contact__form-error" id="name-error" role="alert" aria-live="polite"></span>
+                        </div>
+
+                        <div class="contact__form-group">
+                            <label for="email" class="contact__form-label">E-posta Adresiniz <span
+                                    class="required">*</span></label>
+                            <div class="contact__form-input-wrapper">
+                                <i class="fas fa-envelope contact__form-icon" aria-hidden="true"></i>
+                                <input type="email" id="email" name="email" class="contact__form-input"
+                                    placeholder="ornek@email.com" required aria-required="true"
+                                    aria-describedby="email-error">
+                            </div>
+                            <span class="contact__form-error" id="email-error" role="alert" aria-live="polite"></span>
+                        </div>
+
+                        <div class="contact__form-group">
+                            <label for="subject" class="contact__form-label">Konu <span
+                                    class="required">*</span></label>
+                            <div class="contact__form-input-wrapper">
+                                <i class="fas fa-tag contact__form-icon" aria-hidden="true"></i>
+                                <input type="text" id="subject" name="subject" class="contact__form-input"
+                                    placeholder="Mesajınızın konusu" required aria-required="true"
+                                    aria-describedby="subject-error">
+                            </div>
+                            <span class="contact__form-error" id="subject-error" role="alert" aria-live="polite"></span>
+                        </div>
+
+                        <div class="contact__form-group contact__form-group--full">
+                            <label for="message" class="contact__form-label">Mesajınız <span
+                                    class="required">*</span></label>
+                            <div class="contact__form-input-wrapper">
+                                <i class="fas fa-comment-alt contact__form-icon contact__form-icon--textarea"
+                                    aria-hidden="true"></i>
+                                <textarea id="message" name="message" class="contact__form-input contact__form-textarea"
+                                    rows="6" placeholder="Mesajınızı buraya yazın..." required aria-required="true"
+                                    aria-describedby="message-error"></textarea>
+                            </div>
+                            <span class="contact__form-error" id="message-error" role="alert" aria-live="polite"></span>
+                        </div>
+
+                        <button type="submit" class="button button--primary button--submit" aria-label="Formu gönder">
+                            <span class="button__text">Mesajı Gönder</span>
+                            <i class="fas fa-paper-plane button__icon" aria-hidden="true"></i>
+                        </button>
+
+                        <div class="contact__form-message" id="form-message" role="alert" aria-live="polite"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!--===== SCROLL REVEAL =====-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--===== MAIN JS =====-->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

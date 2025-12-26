@@ -1,0 +1,32 @@
+﻿@using MyPortfolio.Models.Entity
+@model List<TblCertificates>
+
+
+<section class="certificates section" id="work" aria-labelledby="certificates-title">
+    <h2 class="section-title" id="certificates-title">Sertifikalar</h2>
+
+    <div class="certificates__container bd-grid">
+        <!-- Certificate Card 1 -->
+        @foreach (var x in Model)
+        {
+            <article class="certificate-card glass-card">
+
+                <div class="certificate-card__logo">
+                    <i class="@x.Icon certificate-card__icon" aria-hidden="true"></i>
+                </div>
+                <div class="certificate-card__content">
+                    <h3 class="certificate-card__title">@x.Title</h3>
+                    <p class="certificate-card__institution">@x.Institution</p>
+                    <p class="certificate-card__date">
+                        <i class="far fa-calendar-alt" aria-hidden="true"> @x.Date</i>
+                    </p>
+                </div>
+                <a href="@x.CertificateLink" class="certificate-card__button" aria-label="Sertifikayı görüntüle">
+                    <span>Görüntüle</span>
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                </a>
+                
+            </article>
+        }
+        </div>
+</section>
